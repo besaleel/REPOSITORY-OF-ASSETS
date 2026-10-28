@@ -1,6 +1,6 @@
 # Personagens 2D — catálogo da casa
 
-> Levantado em **18/10/2026** varrendo os repositórios de game (branch de trabalho de cada um).
+> Levantado em **18/10/2026** (K-Pop Secret Agents atualizado em **28/10/2026**) varrendo os repositórios de game (branch de trabalho de cada um).
 > **Antes de gerar um personagem novo, procure aqui** (Ctrl+F pelo bicho, pela pose ou pela palavra-chave).
 > Se existir, reaproveite: a arte-fonte (PNG / MP4) está no caminho indicado.
 
@@ -166,16 +166,84 @@ O BK é o mesmo personagem em todos os jogos: **gorila jovem, camiseta amarela c
 | `AVATAR-03` / `aerin-*` | **AERIN** — ídolo neon punk (jaqueta com estrela) | 🎬 idem | kpop-jump | idem |
 | `AVATAR-04` / `veli-*` | **VELI** — garota cyber-gótica roxo e prata | 🎬 idem | kpop-jump | idem |
 
-### 3.3 K-Pop Secret Agents (3 espiãs, cartoon)
+### 3.3 K-Pop Secret Agents (3 espiãs, cartoon) — atualizado em 28/10/2026
+
+> Pastas (repositório K-Pop-Secret-Agents): arte-fonte em `PROJECT/assets/gerados/` (PNG; `*_src` = original antes do
+> ajuste) · vídeos em `PROJECT/assets/videos/` (MP4, chroma **magenta**) · sprites/folhas do jogo em
+> `APK/src/assets/sprites/` (WebP; `*-anim` = folha animada) · shows em `APK/src/assets/shows/`.
+> Traje atual = **macacão de missão** (refs `PROJECT/assets/ref-<nome>-macacao.png`); **Nari de cabelo preto liso**,
+> **Sora ruiva**. Os arquivos `*-jaqueta` e `*-castanha` são versões **antigas** (traje de frio / Nari castanha).
+
+#### Heroínas
 
 | Personagem / arquivo | Descrição | Animação | Onde | Arte |
 |---|---|---|---|---|
-| `Nari`, `base-nari-perfil`, `nari-parada/-idle/-correndo/-pulo/-lancando/-dano` | **Nari** (amarelo, estrelas, pulo duplo) | 🎬 (6 ações) | K-Pop-Secret-Agents `PROJECT/assets/`, `gerados/`, `videos/` | Cartoon K-pop (chroma magenta) |
-| `YUNA`, `base-yuna-perfil`, `yuna-*` | **Yuna** (vermelho, corações, arrancada) | 🎬 | idem | idem |
-| `Sora`, `base-sora-perfil`, `sora-*` | **Sora** (verde, cristais, leque de 3) | 🎬 | idem | idem |
-| `inimigo-abelha`, `inimigo-pombo`, `inimigo-rato`, `inimigo-robo` (+`-anim`) | Inimigos comuns | 🎬 | idem | idem |
-| `inimigo-b01-esquilo`, `-b02-ganso`, `-b03-macaco` / `chefe-b01..b03` | Inimigo exclusivo e mini-chefe dos blocos 1–3 | 🎬 (b01) / ❌ | idem | idem |
-| `missao-b01-gato-java` | Gato Java a resgatar (missão bloco 1) | ❌ | idem | idem |
+| `NARI`, `ref-nari-macacao`, `base-nari-perfil`, `frente-nari` | **Nari** — amarelo, projétil estrela, pulo duplo; referência, perfil (base do vídeo) e retrato de frente | — | `PROJECT/assets/`, `gerados/` | Cartoon K-pop (chroma magenta) |
+| `nari-idle / -correndo / -pulo / -lancando / -dano / -habilidade / -comemorando` (+ `nari-parada`) | As **7 ações** da Nari no macacão | 🎬 (7/7) | `videos/`, `sprites/` | idem |
+| `YUNA`, `ref-yuna-macacao`, `base-yuna-perfil`, `frente-yuna` | **Yuna** — vermelho, projétil coração, arrancada | — | idem | idem |
+| `yuna-idle … -comemorando` (+ `yuna-parada`) | As 7 ações da Yuna no macacão | 🎬 (7/7) | idem | idem |
+| `Sora`, `ref-sora-macacao`, `base-sora-perfil`, `frente-sora`, `conceito-traje-sora-ruiva` | **Sora** — verde, ruiva, projétil cristal, leque de 3 | — | idem | idem |
+| `sora-idle … -comemorando` (+ `sora-parada`) | As 7 ações da Sora no macacão | 🎬 (7/7) | idem | idem |
+| `*-jaqueta` (21 vídeos), `conceito-traje-*`, `base-*-perfil-jaqueta` | Traje antigo de jaqueta (descontinuado em 22/10/2026) | 🎬 | `videos/`, `gerados/` | idem |
+
+#### Outfits da loja (4 por heroína: `street`, `hanbok`, `noturna`, `exploradora`)
+
+| Personagem / arquivo | Descrição | Animação | Onde | Arte |
+|---|---|---|---|---|
+| `frente-<heroina>-<figurino>` (12) → `<heroina>-<figurino>-frente` | Retrato de frente de cada outfit (vitrine da loja) | ❌ | `gerados/`, `sprites/` | Cartoon K-pop |
+| `base-<heroina>-<figurino>-perfil` (12) | Base de perfil 16:9 para gerar os vídeos do outfit | — (base) | `gerados/` | idem |
+| `nari-street-*`, `yuna-street-*`, `sora-street-*` | Outfit **street** das 3 heroínas, 7 ações cada | 🎬 (3 × 7/7) | `videos/`, `sprites/` (Nari e Sora no jogo; Yuna a conferir) | idem |
+| `*-hanbok`, `*-noturna`, `*-exploradora` | Demais outfits — só imagem; vídeos pendentes (créditos do Flow) | ❌ | `gerados/` | idem |
+
+#### Inimigos e mini-chefes (um exclusivo + um chefe por cidade)
+
+| Personagem / arquivo | Descrição | Animação | Onde | Arte |
+|---|---|---|---|---|
+| `inimigo-abelha`, `-pombo`, `-rato`, `-robo` | Inimigos comuns (todas as cidades) | 🎬 (`-anim`) | `gerados/`, `videos/`, `sprites/` | Cartoon K-pop |
+| `inimigo-b01-esquilo` / `chefe-b01-esquilo` | Esquilo · Nova York | 🎬 / 🎬 | idem | idem |
+| `inimigo-b02-ganso` / `chefe-b02-ganso` | Ganso · Paris | 🎬 / 🎬 | idem | idem |
+| `inimigo-b03-macaco` / `chefe-b03-macaco` | Macaco · Pequim (chefe: **Macacão**) | 🎬 / 🎬 | idem | idem |
+| `inimigo-b04-pombo-flamenco` / `chefe-b04-pombo` | Pombo flamenco · Madri (**Pombão Flamenco**) | 🎬 / 🎬 | idem | idem |
+| `inimigo-b05-corgi` / `chefe-b05-corgi` | Corgi · Londres (**Corgão**) | 🎬 / 🎬 | idem | idem |
+| `inimigo-b06-garca` / `chefe-b06-garca` | Garça · Amsterdã (**Garção**) | 🎬 / 🎬 | idem | idem |
+| `inimigo-b07-gato` / `chefe-b07-gato` | Gato · Roma (**Gatão**) | 🎬 / 🎬 | idem | idem |
+| `inimigo-b08-mico` / `chefe-b08-mico` | Mico · Rio de Janeiro | 🎬 / 🎬 | idem | idem |
+| `inimigo-b09-lontra` / `chefe-b09-lontra` | Lontra · Singapura (**Lontrona**) | 🎬 / 🎬 | idem | idem |
+| `inimigo-b10-camelo` / `chefe-b10-camelo` | Filhote de camelo · Dubai (**Camelão**, manta e turbante) | 🎬 / 🎬 | idem | idem |
+| `inimigo-b11-tanuki` / `chefe-b11-tanuki` | Tanuki · Tóquio (**Tanukão**) | 🎬 / 🎬 | idem | idem |
+| `inimigo-b12-pega` / `chefe-b12-pega` | Pega-coreana · Seul (**Pegona**, chefe final) | 🎬 / 🎬 | idem | idem |
+| `fx-poof` | Nuvem "poof" (inimigo some, não morre) | ❌ | `gerados/`, `sprites/` | idem |
+
+#### Informantes (NPC que dá a dica no fim das fases 1–5)
+
+| Personagem / arquivo | Descrição | Animação | Onde | Arte |
+|---|---|---|---|---|
+| `informante-nova-york` | **Tony**, vendedor de cachorro-quente | ❌ (cartão) | `gerados/`, `sprites/` | Cartoon K-pop |
+| `informante-paris` | **Madame Colette**, pintora de rua | ❌ | idem | idem |
+| `informante-pequim` | **Vovô Li**, mestre de tai chi | ❌ | idem | idem |
+| `informante-madri` | **Dona Carmen**, quiosque de churros | ❌ | idem | idem |
+| `informante-londres` | **Sir Reginald**, chapéu-coco e guarda-chuva | ❌ | idem | idem |
+| `informante-amsterda` | **Sanne**, florista de tulipas | ❌ | idem | idem |
+| `informante-roma` | **Nonna Rosa**, vovó dos gatos | ❌ | idem | idem |
+| `informante-rio` | **Dona Lourdes**, vendedora de mate e biscoito de polvilho | ❌ | idem | idem |
+| `informante-singapura` | **Mei**, guarda-florestal | ❌ | idem | idem |
+| `informante-dubai` | **Karim**, jardineiro do Miracle Garden | ❌ | idem | idem |
+| `informante-toquio` | **Kenji**, estudante que desenha mangá | ❌ | idem | idem |
+| `informante-seul` | **Min-jun**, organizador do festival de K-pop | ❌ | idem | idem |
+
+#### Alvos de missão (o que se resgata/recupera em cada cidade)
+
+| Personagem / arquivo | Descrição | Animação | Onde | Arte |
+|---|---|---|---|---|
+| `missao-b01-gato-java` · `-b02-filhote` · `-b03-panda` · `-b09-tartaruga` · `-b12-mascote` | Bichos/mascote a resgatar: gato Java (NY), cachorrinho (Paris), panda (Pequim), tartaruga (Singapura), mascote do festival (Seul) | ❌ | `gerados/`, `sprites/` | Cartoon K-pop |
+| `missao-b04-bolsa` · `-b05-coroa` · `-b06-bicicleta` · `-b07-carrinho` · `-b08-instrumentos` · `-b10-diamante` · `-b11-boneca` | Objetos roubados (bolsa, coroa, bicicleta, carrinho de sorvete, instrumentos, diamante, boneca) | ❌ | idem | idem |
+
+#### Shows e telas (as 3 heroínas juntas)
+
+| Personagem / arquivo | Descrição | Animação | Onde | Arte |
+|---|---|---|---|---|
+| `palco-show-b01…b12` → `show-b01…b12.mp4` | Show K-pop de fim de bloco, um por cidade (30 s) | 🎬 (12/12) | `gerados/`, `videos/`, `APK/src/assets/shows/` | Cartoon K-pop |
+| `tela-inicial-personagens(-v02)`, `background-tela-inicial`, `splash`, `icon`, `banner-arte`, `banner-loja-1024x500` | Trio na tela inicial, splash, ícone e feature graphic da loja | ❌ | `PROJECT/assets/`, `gerados/`, `APK/src/assets/telas/` | idem |
 
 ---
 
